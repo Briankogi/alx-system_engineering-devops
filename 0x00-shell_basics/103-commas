@@ -1,0 +1,6 @@
+#!/bin/bash
+ls -A --sort=alpha --group-directories-first | awk '
+
+  {if ($NF ~ /\/$/) printf "%s,",$0; else printf "%s,",$0} 
+
+  END {printf "\n"}'
